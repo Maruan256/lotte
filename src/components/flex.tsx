@@ -160,7 +160,7 @@ export default function Flex(){
         initial={{scale: 0}}
         animate={{scale: 1}}
         transition={{duration: 0.5, ease: "easeInOut"}}>
-          <DialogPanel className="bg-gradient-to-b from-[#fcff52] to-[#fff] space-y-4 h-screen text-black flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
+          <DialogPanel className="bg-[#fcff52] space-y-4 h-screen text-black flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
             <button onClick={() => setForschung(false)}>
             <div className='w-10 aspect-square p-8'>
               <XMarkIcon className='text-white size-10'></XMarkIcon>
@@ -205,7 +205,7 @@ export default function Flex(){
         </motion.div>
       </Dialog>
       </motion.div>
-      <motion.div onClick={openContact} className='flex bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-purple-600 via-pink-600 to-blue-600 justify-center items-center" h-96 gap-8 m-4 aspect-square shadow-2xl shadow-red-700'
+      <motion.div onClick={openContact} className='flex bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-purple-600 via-pink-600 to-blue-600 justify-center items-center" h-96 gap-8 m-4 aspect-square shadow-2xl'
       whileHover={{scale:0.9}}> 
       <span className="text-white text-5xl tracking-tighter fFace pt-36">contact</span>
       </motion.div>
@@ -230,7 +230,7 @@ export default function Flex(){
       </Dialog>
       <div className='changer h-96 gap-8 m-4 aspect-square shadow-2xl'> 
       </div>
-      <motion.div onClick={openPublikationen} className='flex bg-gradient-to-b from-[#fcff52] to-[#000] overflow-scroll h-96 gap-8 m-4 aspect-square shadow-2xl'
+      <motion.div onClick={openPublikationen} className='flex bg-gradient-to-b from-[#fcff52] to-lime-900 overflow-scroll h-96 gap-8 m-4 aspect-square shadow-2xl'
       whileHover={{scale:0.9}}> 
       <span className="text-5xl tracking-tighter absolute font-thin z-50 fFace ">pu<br/>blika<br/>tionen</span>
       <span className="text-5xl tracking-tighter absolute font-thin p-5 text-gray-500 z-40 text-opacity-55 fFace overflow-clip">pu<br/>blika<br/>tionen</span>

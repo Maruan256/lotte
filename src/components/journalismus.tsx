@@ -26,7 +26,7 @@ export default function Journalismus() {
         <>
         <motion.div 
         onClick={openJournalismus}
-        className='bg-[#FFEBF8] h-96 gap-8 m-4 aspect-square shadow-xl shadow-orange-700 relative'> 
+        className='bg-[#FFEBF8] h-96 gap-8 m-4 aspect-square shadow-2xl relative'> 
             <div className="inset-0 overflow-hidden">
                 <motion.span
                 initial="init"

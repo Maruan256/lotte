@@ -30,9 +30,9 @@ export default function Lehre(){
         <motion.div 
         whileHover={{scale:0.95}}
         onClick={openLehre}
-        className='bg-orange-700 h-96 gap-8 m-4 aspect-square shadow-xl shadow-orange-700 relative'>
+        className='bg-light-blue-300 h-96 gap-8 m-4 aspect-square shadow-2xl relative'>
             <div className='absolute inset-0 overflow-hidden pl-4'>
-                <div className='lehreimage text-9xl pt-48 tracking-tighter'>Lehre</div>
+                <div className='lehreimage text-9xl pt-48 tracking-tighter text-[#310047]'>Lehre</div>
             </div>
             <motion.span
             initial="init"
@@ -60,7 +60,7 @@ export default function Lehre(){
           transition={{duration: 0.5, ease: "easeInOut"}}
   
           className="fixed inset-0 flex w-screen items-center justify-center">
-            <DialogPanel className="bg-orange-700 space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
+            <DialogPanel className="bg-light-blue-300 space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
               <button onClick={() => setLehre(false)}>
               <div className='w-10 aspect-square p-8'>
                 <XMarkIcon className='text-white size-10'></XMarkIcon>
