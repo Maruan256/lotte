@@ -1,0 +1,2 @@
+# lotte
+Lottes static page
