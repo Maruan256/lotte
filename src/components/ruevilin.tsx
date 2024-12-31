@@ -7,7 +7,7 @@ import { LoremIpsum } from 'lorem-ipsum';
 import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle,Description } from '@headlessui/react';
-import rueFoto from '../assets/ruevilin.JPG';
+import rueFoto from '../assets/ruevili.png';
 function ruevilin() {
     let lorem = new LoremIpsum
     const[ruevilin, setRuevilin] = useState(false);
