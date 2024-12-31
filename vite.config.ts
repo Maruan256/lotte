@@ -11,4 +11,5 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.JPG'],
+  base: '/lotte'
 })
