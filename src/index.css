@@ -33,9 +33,22 @@ code {
     src: local("streetwear.regular");
     src: url('./assets/streetwear.regular.otf') format("opentype");
   }
+  @font-face {
+    font-family: "roboto";
+    src: local("Roboto-Thin");
+    src: url("./assets/Roboto-Thin.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "roboto-reg";
+    src: local("Roboto-Light");
+    src: url("./assets/Roboto-Light.ttf") format("truetype");
+  }
 }
 .fFace{
   font-family: 'Major Mono Display';
+}
+.bodytext{
+  font-family: 'roboto-reg';
 }
 .copyleft {
   transform: scaleX(-1);

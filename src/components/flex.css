@@ -4,3 +4,7 @@
     -webkit-transform: scaleX(-1);
     display: inline-block;
 }
+
+.firstletter::first-letter{
+font-size: 100px;
+}

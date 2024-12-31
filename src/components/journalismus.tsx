@@ -65,7 +65,7 @@ export default function Journalismus() {
               <XMarkIcon className='text-black size-10'></XMarkIcon>
             </motion.div>
             </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12">Kulturjournalismus</DialogTitle>
+            <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Kulturjournalismus</DialogTitle>
             <Description className="p-12">{lorem.generateSentences(1)}</Description>
             <p className='p-8'>{lorem.generateParagraphs(30)}</p>
 

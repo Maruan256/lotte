@@ -51,9 +51,7 @@ export default function Flex(){
           ease: "linear",
           repeatType: "mirror",
         }}
-        // You can download these PNGs here:
-        // https://www.hover.dev/black-noise.png
-        // https://www.hover.dev/noise.png
+
         style={{
           backgroundImage: 'url("src/assets/noise.png")',
           // backgroundImage: 'url("/noise.png")',
@@ -119,13 +117,9 @@ export default function Flex(){
   return(
     <div className='flex flex-cols-1 sm:flex-cols-2 md:flex-cols-3 lg:flex-cols-4 xl:flex-cols-5 flex-wrap justify-center overflow-hidden mt-5'>
       <About />
-            
-      <Lehre />
-      <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl hidden lg:block'
-      whileHover={{scale:0.9}}> 
-        <img className='object-cover h-96' src="src/assets/JPG37farocki_GF.max-2712x1282.format-jpeg.jpegquality-80.jpg" alt="bild" />
-      </motion.div>
+      <Portrait />
       <Journalismus />
+      
       <motion.div onClick={openForschung} className='bg-[#FFF238] h-96 gap-8 m-4 aspect-square shadow-2xl overflow-hidden flex justify-end'
       whileHover={{scale:0.9}}> 
       <span className="text-transparent text-[14rem] leading-[9.5rem] font-regular tracking-tighter break-all gradient-text">forschung</span>
@@ -133,7 +127,7 @@ export default function Flex(){
       <motion.span 
       initial="init"
       whileHover="hover"
-      className='relative text-black fFace text-5xl tracking-tighter pr-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.8)] overflow-hidden block inset-0 cursor-pointer'>
+      className='relative text-black fFace text-5xl tracking-tighter pr-4 overflow-hidden block inset-0 cursor-pointer'>
         <motion.div 
       variants={{
         init: {y: 0},
@@ -166,16 +160,19 @@ export default function Flex(){
               <XMarkIcon className='text-white size-10'></XMarkIcon>
             </div>
             </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12">Forschung</DialogTitle>
+            <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Forschung</DialogTitle>
             <Description className="p-12">{lorem.generateSentences(1)}</Description>
             <p className='p-8'>{lorem.generateParagraphs(30)}</p>
 
           </DialogPanel>
         </motion.div>
       </Dialog>
-      
+      <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl hidden lg:block'
+      whileHover={{scale:0.9}}> 
+        <img className='object-cover h-96' src="src/assets/JPG37farocki_GF.max-2712x1282.format-jpeg.jpegquality-80.jpg" alt="bild" />
+      </motion.div>
+      <Lehre />
       <Tagungen />
-      <Portrait />
       <Ruevilin />
       <motion.div onClick={openVortraege} className='overflow-hidden h-96 gap-8 m-4 aspect-square bg-[#Eb00df] shadow-2xl'
       whileHover={{scale:0.9}}> 

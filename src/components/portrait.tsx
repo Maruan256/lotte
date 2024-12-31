@@ -6,18 +6,10 @@ export default function Portrait(){
         <>
             <motion.div
             whileHover={{scale:0.95}}
-            className='h-96 m-4 aspect-square bg-transparent grid grid-cols-2 overflow-hidden'>
-                <div className='h-[12rem]'>
-                    <img src="src/assets/imageOrange.jpg" alt="" />
-                </div>
-                <div className='h-[12rem]'>
-                    <img src="src/assets/imageGruen.jpg" alt="" />
-                </div>
-                <div className='h-[12rem]'>
-                    <img src="src/assets/imageBlue.jpg" alt="" />
-                </div>
-                <div className='h-[12rem]'>
-                    <img src="src/assets/imageFuchsia.jpg" alt="" />
+            className='h-96 m-4 aspect-square bg-transparent overflow-hidden'>
+                
+                <div className='h-full'>
+                    <img src="src/assets/DSC_6543-Edit.jpg" alt="" />
                 </div>
 
             </motion.div>
