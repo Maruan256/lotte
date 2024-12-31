@@ -9,7 +9,7 @@ export default function Portrait(){
             className='h-96 m-4 aspect-square bg-transparent overflow-hidden'>
                 
                 <div className='h-full'>
-                    <img src="src/assets/DSC_6543-Edit.jpg" alt="" />
+                    <img src="/src/assets/DSC_6543-Edit.jpg" alt="" />
                 </div>
 
             </motion.div>
