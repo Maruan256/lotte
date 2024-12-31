@@ -15,6 +15,9 @@ import Portrait from './portrait';
 import Gitterbild from './gitterbild';
 import Ruevilin from './ruevilin';
 import About from './about';
+import kaese from "../assets/JPG37farocki_GF.max-2712x1282.format-jpeg.jpegquality-80.jpg";
+import noise from "../assets/noise.png"
+import { url } from 'inspector';
 let greenSquareClass = "bg-[#3B4D04] h-96 gap-8 m-4 aspect-square";
 let orangeSquareClass = "bg-[#FA0D0D] h-full w-full gap-8 m-4 aspect-square";
 
@@ -53,7 +56,7 @@ export default function Flex(){
         }}
 
         style={{
-          backgroundImage: 'url("src/assets/noise.png")',
+          backgroundImage: `url("${noise}")`,
           // backgroundImage: 'url("/noise.png")',
         }}
         className="pointer-events-none absolute -inset-[100%] opacity-[45%]"
@@ -169,7 +172,7 @@ export default function Flex(){
       </Dialog>
       <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl hidden lg:block'
       whileHover={{scale:0.9}}> 
-        <img className='object-cover h-96' src="src/assets/JPG37farocki_GF.max-2712x1282.format-jpeg.jpegquality-80.jpg" alt="bild" />
+        <img className='object-cover h-96' src={kaese} alt="bild" />
       </motion.div>
       <Lehre />
       <Tagungen />
