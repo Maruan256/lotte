@@ -19,7 +19,7 @@ function ruevilin() {
         <motion.div 
       whileHover={{scale:0.9}}
       onClick={openRuevilin}
-      className='bg-[#FF0554] h-96 gap-8 m-4 aspect-square shadow-2xl overflow-hidden'> 
+      className='bg-[#FF0554] h-96 sm:gap-8 sm:m-4 aspect-square sm:shadow-2xl overflow-hidden'> 
         <img className='object-cover h-96 aspect-square' src={rueFoto} alt="Rue Vilin" />
       </motion.div>
       <Dialog open={ruevilin} onClose={() => setRuevilin(false)} className="relative z-50">

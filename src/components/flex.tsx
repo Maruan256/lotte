@@ -123,7 +123,7 @@ export default function Flex(){
       <Portrait />
       <Journalismus />
       
-      <motion.div onClick={openForschung} className='bg-[#FFF238] h-96 gap-8 m-4 aspect-square shadow-2xl overflow-hidden flex justify-end'
+      <motion.div onClick={openForschung} className='bg-[#FFF238] h-96 sm:m-4 sm:gap-8 aspect-square shadow-2xl overflow-hidden flex justify-end'
       whileHover={{scale:0.9}}> 
       <span className="text-transparent text-[14rem] leading-[9.5rem] font-regular tracking-tighter break-all gradient-text">forschung</span>
       <div className='absolute overflow-hidden pt-80'>

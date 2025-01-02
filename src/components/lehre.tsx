@@ -30,7 +30,7 @@ export default function Lehre(){
         <motion.div 
         whileHover={{scale:0.95}}
         onClick={openLehre}
-        className='bg-light-blue-300 h-96 gap-8 m-4 aspect-square shadow-2xl relative'>
+        className='bg-light-blue-300 h-96 sm:gap-8 sm:m-4 aspect-square sm:shadow-2xl relative'>
             <div className='absolute inset-0 overflow-hidden pl-4'>
                 <div className='lehreimage text-9xl pt-48 tracking-tighter text-[#310047]'>Lehre</div>
             </div>

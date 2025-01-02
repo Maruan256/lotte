@@ -5,6 +5,7 @@ import { LoremIpsum } from 'lorem-ipsum';
 import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle,Description } from '@headlessui/react';
+import gitterbildjpg from '../assets/bi-carre-Lieux-FGP-57-2-11d_gd.jpg';
 
 
 function gitterbild() {
@@ -18,8 +19,8 @@ function gitterbild() {
     <motion.div 
       whileHover={{scale:0.9}}
       onClick={openGitterbild}
-      className='bg-[#FF0554] h-96 gap-8 m-4 aspect-square shadow-2xl'> 
-        <img className='object-cover h-96' src="src/assets/bi-carre-Lieux-FGP-57-2-11d_gd.jpg" alt="" />
+      className='bg-[#FF0554] h-96 sm:gap-8 sm:m-4 aspect-square shadow-2xl'> 
+        <img className='object-cover h-96' src={gitterbildjpg} alt="" />
       </motion.div>
       <Dialog open={gitterbild} onClose={() => setGitterbild(false)} className="relative z-50">
       <DialogBackdrop className="fixed inset-0 bg-[#0E6902]/50" />

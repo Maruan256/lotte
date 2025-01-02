@@ -43,17 +43,13 @@ export default function Tagungen(){
             console.log(err.message);
         })
     }, []);
-    function print(){
-        console.log(parser.parseFromString(teststring, "text/html").documentElement.textContent);
-        console.log(typeof posts.content.rendered)
 
-    }
     return(
         <>
         <motion.div
         whileHover={{scale:0.95}} 
         onClick={openTagungen}
-        className={'bg-[#0E6902] h-96 gap-8 m-4 aspect-square shadow-2xl overflow-hidden fFace text-5xl ' + (tagungen ? 'hidden' : 'block')}> 
+        className={'bg-[#0E6902] h-96 sm:gap-8 sm:m-4 aspect-square shadow-2xl overflow-hidden fFace text-5xl ' + (tagungen ? 'hidden' : 'block')}> 
         <motion.a
         initial="init"
         whileHover="hover"
@@ -118,8 +114,6 @@ export default function Tagungen(){
             <DialogTitle className="font-sans fFace text-6xl p-12 text-lime-100">Tagungen</DialogTitle>
             <Description className="p-12">{lorem.generateSentences(1)}</Description>
             <p className='p-8'>{posts.content ? stripHTMLTags(posts.content.rendered) : 'target not found anywhere where I looked'}</p>
-            <div className='h-96 aspect-square bg-blue-gray-500' onClick={print}></div>
-
           </DialogPanel>
         </motion.div>
       </Dialog>
