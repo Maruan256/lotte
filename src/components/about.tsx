@@ -16,9 +16,9 @@ const about = () => {
 <>
 <motion.div 
             whileHover={{scale:0.95}}
-            onClick={openAbout} className='flex-col h-96 sm:m-4 aspect-square lg:aspect-[2.1/1] bg-gradient-to-b from-[#B6E397] to-[#618BA7] items-end justify-end shadow-2xl'> 
+            onClick={openAbout} className='flex-col h-96 m-4 gap-8 aspect-square lg:aspect-[2.1/1] bg-gradient-to-b from-[#B6E397] to-[#618BA7] items-end justify-end shadow-2xl'> 
             <div className="h-80 p-10 text-start">
-    <span className="text-white fFace text-lg leading-3 lowercase font-bold">Ich bin Literaturwissenschaftlerin an der MLU Halle. Außerdem schreibe ich Literaturkritiken für die SZ, FAZ
+    <span className="text-white fFace text-sm lg:text-lg leading-3 lowercase font-bold break-words">Ich bin Literaturwissenschaftlerin an der MLU Halle. Außerdem schreibe ich Literaturkritiken für die SZ, FAZ
 und für die Zeitschrift Buchzeit.</span>
 </div>
       <motion.a 

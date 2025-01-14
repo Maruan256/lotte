@@ -49,7 +49,7 @@ export default function Tagungen(){
         <motion.div
         whileHover={{scale:0.95}} 
         onClick={openTagungen}
-        className={'bg-[#0E6902] h-96 sm:gap-8 sm:m-4 aspect-square shadow-2xl overflow-hidden fFace text-5xl ' + (tagungen ? 'hidden' : 'block')}> 
+        className={'bg-[#0E6902] h-96 gap-8 m-4 aspect-square shadow-2xl overflow-hidden fFace text-5xl ' + (tagungen ? 'hidden' : 'block')}> 
         <motion.a
         initial="init"
         whileHover="hover"

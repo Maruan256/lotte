@@ -7,7 +7,7 @@ export default function Portrait(){
         <>
             <motion.div
             whileHover={{scale:0.95}}
-            className='h-96 sm:m-4 aspect-square bg-transparent overflow-hidden sm:shadow-2xl'>
+            className='h-96 m-4 aspect-square bg-transparent overflow-hidden shadow-2xl'>
                 
                 <div className='h-full'>
                     <img src={portrait} alt="" />

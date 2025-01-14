@@ -18,6 +18,10 @@ import About from './about';
 import kaese from "../assets/JPG37farocki_GF.max-2712x1282.format-jpeg.jpegquality-80.jpg";
 import noise from "../assets/noise.png"
 import { url } from 'inspector';
+import Speichergraph from './speichergraph';
+import Vortraege from './vortraege';
+import Publikationen from './publikationen';
+import Forschung from './forschung';
 let greenSquareClass = "bg-[#3B4D04] h-96 gap-8 m-4 aspect-square";
 let orangeSquareClass = "bg-[#FA0D0D] h-full w-full gap-8 m-4 aspect-square";
 
@@ -79,12 +83,8 @@ export default function Flex(){
 
 
 
-  function openTagungen(){
-    setTagungen(true)
-  };
-  function openLehre(){
-    setLehre(true)
-  };
+
+
   function openKulturjournalismus(){
     setKulturjournalismus(true)
   };
@@ -106,15 +106,7 @@ export default function Flex(){
   function openNewsletter(){
     setNewsletter(true)
   }
-  function openPublikationen(){
-    setPublikationen(true)
-  };
-  function openTest(){
-    setTest(true)
-  };
-  function closeTest(){
-    setTest(false)
-  };
+
 
 
   return(
@@ -123,91 +115,20 @@ export default function Flex(){
       <Portrait />
       <Journalismus />
       
-      <motion.div onClick={openForschung} className='bg-[#FFF238] h-96 sm:m-4 sm:gap-8 aspect-square shadow-2xl overflow-hidden flex justify-end'
-      whileHover={{scale:0.9}}> 
-      <span className="text-transparent text-[14rem] leading-[9.5rem] font-regular tracking-tighter break-all gradient-text">forschung</span>
-      <div className='absolute overflow-hidden pt-80'>
-      <motion.span 
-      initial="init"
-      whileHover="hover"
-      className='relative text-black fFace text-5xl tracking-tighter pr-4 overflow-hidden block inset-0 cursor-pointer'>
-        <motion.div 
-      variants={{
-        init: {y: 0},
-        hover: {y: "-100%"},
-
-      }}>
-        forschung
-      </motion.div>
-      <motion.div 
-      className='absolute inset-0'
-      variants={{
-        init: {y: "100%"},
-        hover: {y: 0},
-
-      }}>
-        forschung
-      </motion.div>
-        </motion.span>
-        </div>
-      </motion.div>
-      <Dialog open={forschung} onClose={() => setForschung(false)} className="relative z-[71]">
-      <DialogBackdrop className="fixed inset-0 bg-[#000]/30" />
-        <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
-        initial={{scale: 0}}
-        animate={{scale: 1}}
-        transition={{duration: 0.5, ease: "easeInOut"}}>
-          <DialogPanel className="bg-[#fcff52] space-y-4 h-screen text-black flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
-            <button onClick={() => setForschung(false)}>
-            <div className='w-10 aspect-square p-8'>
-              <XMarkIcon className='text-white size-10'></XMarkIcon>
-            </div>
-            </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Forschung</DialogTitle>
-            <Description className="p-12">{lorem.generateSentences(1)}</Description>
-            <p className='p-8'>{lorem.generateParagraphs(30)}</p>
-
-          </DialogPanel>
-        </motion.div>
-      </Dialog>
-      <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl hidden lg:block'
+      <Forschung />
+      <a href="https://www.matthes-seitz-berlin.de/buch/beruehren-lesen.html">
+      <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl'
       whileHover={{scale:0.9}}> 
         <img className='object-cover h-96' src={kaese} alt="bild" />
       </motion.div>
+      </a>
       <Lehre />
       <Tagungen />
       <Ruevilin />
-      <motion.div onClick={openVortraege} className='overflow-hidden h-96 gap-8 m-4 aspect-square bg-[#Eb00df] shadow-2xl'
-      whileHover={{scale:0.9}}> 
-      <div className="flex flex-wrap items-end justify-between h-2/4 break-all p-5">     
-          <div className="font-sans text-black text-5xl tracking-[0.02em] flex basis-2/5 leading-[35px] break-all fFace" >vortraege</div>
-          <div className="flex basis-1/3 break-all font-sans text-teal-400 text-9xl leading-6 tracking-[-.55em] fFace">...<br/>...<br/>...</div>
-          <div className="row items-stretch align-bottom p-10 text-[#54f33f] text-5xl fFace">.........<br/>.........
-          </div>
-      </div>
-      <Dialog open={vortraege} onClose={() => setVortraege(false)} className="relative z-[100]">
-      <DialogBackdrop className="fixed inset-0 bg-[#Eb00df]/30" />
-        <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
-        initial={{scale: 0}}
-        animate={{scale: 1}}
-        transition={{duration: 0.5, ease: "easeInOut"}}>
-          <DialogPanel className="bg-gradient-to-b from-[#00869e] to-[#Eb00df] space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
-            <button onClick={() => setVortraege(false)}>
-            <div className='w-10 aspect-square p-8'>
-              <XMarkIcon className='text-white size-10'></XMarkIcon>
-            </div>
-            </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12">Vorträge</DialogTitle>
-            <Description className="p-12">{lorem.generateSentences(1)}</Description>
-            <p className='p-8'>{lorem.generateParagraphs(30)}</p>
-
-          </DialogPanel>
-        </motion.div>
-      </Dialog>
-      </motion.div>
+      <Vortraege />
       <motion.div onClick={openContact} className='flex bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-purple-600 via-pink-600 to-blue-600 justify-center items-center" h-96 gap-8 m-4 aspect-square shadow-2xl'
       whileHover={{scale:0.9}}> 
-      <span className="text-white text-5xl tracking-tighter fFace pt-36">contact</span>
+      <span className="text-white text-5xl tracking-tighter fFace pt-36">kontakt</span>
       </motion.div>
       <Dialog open={contact} onClose={() => setContact(false)} className="relative z-[100]">
       <DialogBackdrop className="fixed inset-0 bg-[#Eb00df]/30" />
@@ -221,7 +142,7 @@ export default function Flex(){
               <XMarkIcon className='text-white size-10'></XMarkIcon>
             </div>
             </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12">Kontakt</DialogTitle>
+            <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Kontakt</DialogTitle>
             <Description className="p-12">{lorem.generateSentences(1)}</Description>
             <p className='p-8'>{lorem.generateParagraphs(30)}</p>
 
@@ -230,34 +151,7 @@ export default function Flex(){
       </Dialog>
       <div className='changer h-96 gap-8 m-4 aspect-square shadow-2xl'> 
       </div>
-      <motion.div onClick={openPublikationen} className='flex bg-gradient-to-b from-[#fcff52] to-lime-900 overflow-scroll h-96 gap-8 m-4 aspect-square shadow-2xl'
-      whileHover={{scale:0.9}}> 
-      <span className="text-5xl tracking-tighter absolute font-thin z-50 fFace ">pu<br/>blika<br/>tionen</span>
-      <span className="text-5xl tracking-tighter absolute font-thin p-5 text-gray-500 z-40 text-opacity-55 fFace overflow-clip">pu<br/>blika<br/>tionen</span>
-      <span className="text-5xl tracking-tighter absolute font-thin p-10 text-gray-400 z-30 text-opacity-55 fFace overflow-clip">pu<br/>blika<br/>tionen</span>
-      <span className="text-5xl tracking-tighter absolute font-thin p-15 text-gray-300 z-30 text-opacity-55 fFace overflow-clip">pu<br/>blika<br/>tionen</span>
-      <span className="text-5xl tracking-tighter absolute font-thin p-20 text-gray-200 z-30 text-opacity-10 fFace overflow-clip">pu<br/>blika<br/>tionen</span>
-      <span className="text-5xl tracking-tighter absolute font-thin p-[18rem] pr-0 pb-0 text-white z-30 text-opacity-75 fFace overflow-clip">pu<br/>bli</span>
-      </motion.div>
-      <Dialog open={publikationen} onClose={() => setPublikationen(false)} className="relative z-[100]">
-      <DialogBackdrop className="fixed inset-0 bg-[#000]/30" />
-        <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
-        initial={{scale: 0}}
-        animate={{scale: 1}}
-        transition={{duration: 0.5, ease: "easeInOut"}}>
-          <DialogPanel className="bg-gradient-to-b from-[#fcff52] to-[#000] space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
-            <button onClick={() => setPublikationen(false)}>
-            <div className='w-10 aspect-square p-8'>
-              <XMarkIcon className='text-white size-10'></XMarkIcon>
-            </div>
-            </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12">Publikationen</DialogTitle>
-            <Description className="p-12">{lorem.generateSentences(1)}</Description>
-            <p className='p-8'>{lorem.generateParagraphs(30)}</p>
-
-          </DialogPanel>
-        </motion.div>
-      </Dialog>
+      <Publikationen />
       <motion.div onClick={openAktuelles} className='bg-[repeating-linear-gradient(to_bottom,#afafaf_0px,#afafaf_20px,#e5e6eb_20px,#e5e6eb_40px)] items-center flex-row overflow-hidden h-96 gap-8 m-4 aspect-square relative shadow-2xl'
       whileHover={{scale:0.9}}> 
       <div className='absolute inset-0 overflow-hidden'>
@@ -296,7 +190,7 @@ export default function Flex(){
               <XMarkIcon className='text-white size-10'></XMarkIcon>
             </div>
             </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12">Aktuelles</DialogTitle>
+            <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Aktuelles</DialogTitle>
             <Description className="p-12">{lorem.generateSentences(1)}</Description>
             <p className='p-8'>{lorem.generateParagraphs(30)}</p>
 
@@ -335,6 +229,7 @@ export default function Flex(){
           </DialogPanel>
         </motion.div>
       </Dialog>
+      <Speichergraph />
     </div>
     
   )
