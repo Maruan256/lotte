@@ -24,6 +24,7 @@ import Publikationen from './publikationen';
 import Forschung from './forschung';
 import Projekte from './projekte';
 import Aktuelles from './aktuelles';
+import Contact from './contact';
 let greenSquareClass = "bg-[#3B4D04] h-96 gap-8 m-4 aspect-square";
 let orangeSquareClass = "bg-[#FA0D0D] h-full w-full gap-8 m-4 aspect-square";
 
@@ -107,29 +108,7 @@ export default function Flex(){
       <Tagungen />
       <Ruevilin />
       <Vortraege />
-      <motion.div onClick={openContact} className='flex bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-purple-600 via-pink-600 to-blue-600 justify-center items-center" h-96 gap-8 m-4 aspect-square shadow-2xl'
-      whileHover={{scale:0.9}}> 
-      <span className="text-white text-5xl tracking-tighter fFace pt-36">kontakt</span>
-      </motion.div>
-      <Dialog open={contact} onClose={() => setContact(false)} className="relative z-[100]">
-      <DialogBackdrop className="fixed inset-0 bg-[#Eb00df]/30" />
-        <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
-        initial={{scale: 0}}
-        animate={{scale: 1}}
-        transition={{duration: 0.5, ease: "easeInOut"}}>
-          <DialogPanel className="bg-gradient-to-b from-[#00869e] to-[#Eb00df] space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
-            <button onClick={() => setContact(false)}>
-            <div className='w-10 aspect-square p-8'>
-              <XMarkIcon className='text-white size-10'></XMarkIcon>
-            </div>
-            </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Kontakt</DialogTitle>
-            <Description className="p-12">{lorem.generateSentences(1)}</Description>
-            <p className='p-8'>{lorem.generateParagraphs(30)}</p>
-
-          </DialogPanel>
-        </motion.div>
-      </Dialog>
+      <Contact />   
       <div className='changer h-96 gap-8 m-4 aspect-square shadow-2xl'> 
       </div>
       <Publikationen />

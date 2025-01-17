@@ -69,6 +69,14 @@ export function StickyNavbar() {
   function openNavJournalismus(){
     setNavJournalismus(true);
   };
+  const[NavContact, setNavContact] = useState(false);
+  function openNavContact(){
+    setNavContact(true);
+  };
+  const[NavTagungen, setNavTagungen] = useState(false);
+  function openNavTagungen(){
+    setNavTagungen(true);
+  };
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 items-end 2xl:mb-0 2xl:mt-0 2xl:flex-row 2xl:items-center 2xl:gap-6 2xl:justify-between">
       <Typography
@@ -139,9 +147,11 @@ export function StickyNavbar() {
         color="black"
         className="p-1 fFace"
       >
+        <button onClick={openNavTagungen}>
         <a href="#" className="flex items-center">
           tagungen
         </a>
+        </button>
       </Typography>
       <Typography
         as="li"
@@ -179,172 +189,18 @@ export function StickyNavbar() {
         </a>
         </button>
       </Typography>
-      <Dialog open={NavLehre} onClose={() => setNavLehre(false)} className="relative z-[71]">
-        <DialogBackdrop className="fixed inset-0 bg-[#618BA7]/30" />
-          <motion.div 
-          initial={{scale: 0}}
-          animate={{scale: 1}}
-          transition={{duration: 0.5, ease: "easeInOut"}}
-  
-          className="fixed inset-0 flex w-screen items-center justify-center">
-            <DialogPanel className="bg-light-blue-300 space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
-              <button onClick={() => setNavLehre(false)}>
-              <div className='w-10 aspect-square p-8'>
-                <XMarkIcon className='text-white size-10'></XMarkIcon>
-              </div>
-              </button>
-              <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Lehre</DialogTitle>
-              <Description className="text-center fFace text-3xl pb-5 lowercase">VERZEICHNIS DER LEHRVERANSTALTUNGEN</Description>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2024/25 (MLU Halle)</p>
-                <p className="basis-2/3 text-start leading-6">Erzähltextanalyse (Methodenübung)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2023/24 (LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Schreiben. Materialität und Medialität (Proseminar zus. mit Prof. Dr. Erika Thomalla (Buchwissenschaften)) <br />
-Gemeinheiten. Kollektive Imaginationen (Hauptseminar) <br />
-Roland Barthes: Mythologies (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2022/23
-                (LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Einführung in die Allgemeine und Vergleichende Literaturwissenschaft (vierstündiger Einführungskurs) <br />
-Melancholie (Hauptseminar) <br />
-Adalbert Stifter: Der Nachsommer (Lektürekurs) <br />
-George Eliot: Middlemarch (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2022(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Kritik, Essay und verwandte Formen (Proseminar zus. mit Marie Schmidt (Feuilleton-Redakteurin bei Süddeutsche Zeitung)) <br />
-Literarische und psychoanalytische Familienromane (Hauptseminar zus. mit Dr. Hanna Sohns (Romanistik)) <br />
-Michel Foucault: L’histoire de la sexualité I (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2021/22(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">(Un)writing gender (Hauptseminar zus. mit Dr. Hanna Sohns (Romanistik)) <br />
-Kammerspiel, Häuslichkeit, Alltag: Zur Politik privater Räume (Proseminar zus. mit Dr. Adrian Renner (Germanistik)) <br />
-Michel Foucault: Les mots et les choses (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2021(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Der Roman (Hauptseminar) <br />
-Orientierung in der methodischen Vielfalt der AVL: Raumtheorien (Hauptseminar) <br />
-Rainald Goetz: Abfall für alle (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2020/21(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Poetiken der Menge (Proseminar zus. mit Dr. Hanna Sohns (Romanistik)) <br />
-Prosa des Lebens (Proseminar) <br />
-G.W.F. Hegel: Philosophie der Kunst (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2020(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Geschlechterdebatten 1900/2000 (Proseminar zus. mit Dr. Adrian Renner (Germanistik)) <br />
-Adalbert Stifter: Bunte Steine (Lektürekurs) <br />
-Virginia Woolf: Mrs. Dalloway (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2019/20(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Einführung in die Allgemeine und Vergleichende Literaturwissenschaft (vierstündiger Einführungskurs) <br />
-                Stadtordnungen (Hauptseminar zus. mit Dr. Julian Müller (Soziologe))</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2019(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Stillleben in Bild und Texte (Hauptseminar gemeinsam mit Dr. Léa Kuhn (Kunsthistorikerin)) <br />
-                Tagebücher (Proseminar)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2018/19(LMU MÜnchen)
-                </p>
-                <p className="basis-2/3 text-start leading-6">Orientierung in der methodischen Vielfalt der AVL: Literatur und Feminismus (Hauptseminar) <br />
-Ästhetiken des Widerstands (Hauptseminar) <br />
-James Joyce: Ulysses (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2018(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Was heißt ‚Dekonstruktion‘? (Hauptseminar) <br />
-Was ist Universität? (Proseminar) <br />
-Dante: Divina Commedia (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2017/18(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Einführung in die Allgemeine und Vergleichende Literaturwissenschaft (vierstündiger Einführungskurs) <br />
-                Pierre Bourdieu: Homo academicus (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2017(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Materialitäten (Hauptseminar zus. mit Dr. Lars Bullmann (AVL)) <br />
-Von der Scham und vom Schämen (Proseminar) <br />
-Deleuze/Guattari: Mille Plateaux (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2016/17(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Literatur und Fotografie (Proseminar) <br />
-                Marx lesen (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2016(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Geschichte schreiben (Proseminar)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2015(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Zwänge, Regeln, Spielräume in der literarischen Sprache (Proseminar) <br />
-                Was ist ‚Realismus‘? (Proseminar)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2014/15(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Freud: Trieb und Kultur (Proseminar zus. mit Johannes Kleinbeck)
-                </p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2014(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Alltag (Proseminar) <br />
-                Michael Bachtin (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2013/14(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Zwang als literarisches Verfahren. Oulipo und die Zeit ihrer Entstehung (Proseminar)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2013(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Das Fragment als Form (Proseminar) <br />
-                Friedrich Nietzsche (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2012/13(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Jean Racine (Proseminar) <br />
-                Franz Kafka (Lektürekurs zus. mit Dr. Lars Bullmann)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2012(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Hermeneutiken (Proseminar) <br />
-                G. W. F. Hegel: Vorlesungen über die Ästhetik (Lektürekurs zus. mit Dr. Lars Bullmann)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Wintersemester 2011/12(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Recht und Literatur (Proseminar)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2011(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Allegorie (Proseminar) <br />
-                Paul de Man (Lektürekurs)</p>
-            </div>
-            <div className="flex m-5 bodytext text-xl pb-14">
-                <p className="basis-1/3 text-end pr-8">Sommersemester 2007(LMU MÜnchen)</p>
-                <p className="basis-2/3 text-start leading-6">Einführung in die AVL (Tutorium)</p>
-            </div>
-            </DialogPanel>
-          </motion.div>
-        </Dialog>
+
       <Typography
         as="li"
         variant="small"
         color="black"
         className="p-1 fFace"
       >
+        <button onClick={openNavContact}>
         <a href="#" className="flex items-center">
           kontakt
         </a>
+        </button>
       </Typography>
     </ul>
   );
@@ -1067,8 +923,310 @@ es an den Tag“, in: Süddeutsche Zeitung, 30.01.2019.</a></p>
             </div>
 
           </DialogPanel>
+          <Dialog open={NavTagungen} onClose={() => setNavTagungen(false)} className="relative z-[71]">
+      <DialogBackdrop className="fixed inset-0 bg-[#0E6902]/50" />
+        <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
+        initial={{scale: 0}}
+        animate={{scale: 1}}
+        transition={{duration: 0.5, ease: "easeInOut"}}>
+          <DialogPanel className="bg-[#0E6902] space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
+            <button onClick={() => setNavTagungen(false)}>
+            <motion.div className='w-10 aspect-square p-8'
+            whileHover={{scale: 1.2}}>
+              <XMarkIcon className='text-lime-100 size-10'></XMarkIcon>
+            </motion.div>
+            </button>
+            <DialogTitle className="font-sans fFace text-6xl p-12 text-lime-100 firstletter text-center">Tagungen</DialogTitle>
+            <Description className="p-12 fFace text-3xl lowercase">konferenzen - workshops - buchklub</Description>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">European Centers and Peripheries in the Political Novel (CAPONEU Tagung) am ZfL
+Berlin im Juni 2024 (zus. mit Kyung-Ho Cha, Patrick Eiden-Offe, Ivana Perica und
+Christoph Schaub)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Buchklub: Romane fürs neue Jahrhundert im Literaturhaus Berlin seit Oktober 2023 (zus.
+                    mit Patrick Eiden-Offe, Ivana Perica, Kyung-Ho Cha und Christoph Schaub)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">What is the Political Novel: Defining the Genre (CAPONEU Jahrestagung) am ZfL Berlin
+im September 2023 (zus. mit Kyung-Ho Cha, Patrick Eiden-Offe, Ivana Perica und
+Christoph Schaub)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Poetik des Fehlers an der LMU München im Juli 2022 (zus. mit Viktor Fritzenkötter)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Literary Acts of agency an der LMU München im Rahmen des Cambridge-LMU Research
+                Partnership Rule of Law im Juli 2022 (zus. mit Ivana Perica)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Kammerlektüren (Lektüre-Reihe) in den Kammerspielen München in der Spielzeit
+                2021/2022</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Die Maschine in der Dichtung an der LMU München im Februar 2021 (zus. mit Jan Niklas
+                    Howe/Nachwuchsforschungsgruppe Kreativität und Genie)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Weibliche Kollektive an der LMU München im Rahmen des DFG-Netzwerks Dispositiv der
+                Menge im November 2020 (zus. mit Hanna Sohns)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Arbeit am Feminismus in Kooperation mit den Kammerspielen München im März 2020</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Schreibweisen des Selbst in der Gegenwartsliteratur an der LMU München im Juli 2019
+                (zus. mit Johannes Kleinbeck)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl pb-20">
+                <p className="text-start pr-8">Geschichte schreiben an der LMU München im Juli 2016</p>
+            </div>
+          </DialogPanel>
         </motion.div>
       </Dialog>
+        </motion.div>
+      </Dialog>
+      <Dialog open={NavLehre} onClose={() => setNavLehre(false)} className="relative z-[71]">
+        <DialogBackdrop className="fixed inset-0 bg-[#618BA7]/30" />
+          <motion.div 
+          initial={{scale: 0}}
+          animate={{scale: 1}}
+          transition={{duration: 0.5, ease: "easeInOut"}}
+  
+          className="fixed inset-0 flex w-screen items-center justify-center">
+            <DialogPanel className="bg-light-blue-300 space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
+              <button onClick={() => setNavLehre(false)}>
+              <div className='w-10 aspect-square p-8'>
+                <XMarkIcon className='text-white size-10'></XMarkIcon>
+              </div>
+              </button>
+              <DialogTitle className="font-sans fFace text-6xl p-12 firstletter">Lehre</DialogTitle>
+              <Description className="text-center fFace text-3xl pb-5 lowercase">VERZEICHNIS DER LEHRVERANSTALTUNGEN</Description>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2024/25 (MLU Halle)</p>
+                <p className="basis-2/3 text-start leading-6">Erzähltextanalyse (Methodenübung)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2023/24 (LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Schreiben. Materialität und Medialität (Proseminar zus. mit Prof. Dr. Erika Thomalla (Buchwissenschaften)) <br />
+Gemeinheiten. Kollektive Imaginationen (Hauptseminar) <br />
+Roland Barthes: Mythologies (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2022/23
+                (LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Einführung in die Allgemeine und Vergleichende Literaturwissenschaft (vierstündiger Einführungskurs) <br />
+Melancholie (Hauptseminar) <br />
+Adalbert Stifter: Der Nachsommer (Lektürekurs) <br />
+George Eliot: Middlemarch (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2022(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Kritik, Essay und verwandte Formen (Proseminar zus. mit Marie Schmidt (Feuilleton-Redakteurin bei Süddeutsche Zeitung)) <br />
+Literarische und psychoanalytische Familienromane (Hauptseminar zus. mit Dr. Hanna Sohns (Romanistik)) <br />
+Michel Foucault: L’histoire de la sexualité I (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2021/22(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">(Un)writing gender (Hauptseminar zus. mit Dr. Hanna Sohns (Romanistik)) <br />
+Kammerspiel, Häuslichkeit, Alltag: Zur Politik privater Räume (Proseminar zus. mit Dr. Adrian Renner (Germanistik)) <br />
+Michel Foucault: Les mots et les choses (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2021(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Der Roman (Hauptseminar) <br />
+Orientierung in der methodischen Vielfalt der AVL: Raumtheorien (Hauptseminar) <br />
+Rainald Goetz: Abfall für alle (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2020/21(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Poetiken der Menge (Proseminar zus. mit Dr. Hanna Sohns (Romanistik)) <br />
+Prosa des Lebens (Proseminar) <br />
+G.W.F. Hegel: Philosophie der Kunst (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2020(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Geschlechterdebatten 1900/2000 (Proseminar zus. mit Dr. Adrian Renner (Germanistik)) <br />
+Adalbert Stifter: Bunte Steine (Lektürekurs) <br />
+Virginia Woolf: Mrs. Dalloway (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2019/20(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Einführung in die Allgemeine und Vergleichende Literaturwissenschaft (vierstündiger Einführungskurs) <br />
+                Stadtordnungen (Hauptseminar zus. mit Dr. Julian Müller (Soziologe))</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2019(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Stillleben in Bild und Texte (Hauptseminar gemeinsam mit Dr. Léa Kuhn (Kunsthistorikerin)) <br />
+                Tagebücher (Proseminar)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2018/19(LMU MÜnchen)
+                </p>
+                <p className="basis-2/3 text-start leading-6">Orientierung in der methodischen Vielfalt der AVL: Literatur und Feminismus (Hauptseminar) <br />
+Ästhetiken des Widerstands (Hauptseminar) <br />
+James Joyce: Ulysses (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2018(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Was heißt ‚Dekonstruktion‘? (Hauptseminar) <br />
+Was ist Universität? (Proseminar) <br />
+Dante: Divina Commedia (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2017/18(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Einführung in die Allgemeine und Vergleichende Literaturwissenschaft (vierstündiger Einführungskurs) <br />
+                Pierre Bourdieu: Homo academicus (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2017(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Materialitäten (Hauptseminar zus. mit Dr. Lars Bullmann (AVL)) <br />
+Von der Scham und vom Schämen (Proseminar) <br />
+Deleuze/Guattari: Mille Plateaux (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2016/17(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Literatur und Fotografie (Proseminar) <br />
+                Marx lesen (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2016(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Geschichte schreiben (Proseminar)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2015(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Zwänge, Regeln, Spielräume in der literarischen Sprache (Proseminar) <br />
+                Was ist ‚Realismus‘? (Proseminar)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2014/15(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Freud: Trieb und Kultur (Proseminar zus. mit Johannes Kleinbeck)
+                </p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2014(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Alltag (Proseminar) <br />
+                Michael Bachtin (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2013/14(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Zwang als literarisches Verfahren. Oulipo und die Zeit ihrer Entstehung (Proseminar)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2013(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Das Fragment als Form (Proseminar) <br />
+                Friedrich Nietzsche (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2012/13(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Jean Racine (Proseminar) <br />
+                Franz Kafka (Lektürekurs zus. mit Dr. Lars Bullmann)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2012(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Hermeneutiken (Proseminar) <br />
+                G. W. F. Hegel: Vorlesungen über die Ästhetik (Lektürekurs zus. mit Dr. Lars Bullmann)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Wintersemester 2011/12(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Recht und Literatur (Proseminar)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2011(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Allegorie (Proseminar) <br />
+                Paul de Man (Lektürekurs)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl pb-14">
+                <p className="basis-1/3 text-end pr-8">Sommersemester 2007(LMU MÜnchen)</p>
+                <p className="basis-2/3 text-start leading-6">Einführung in die AVL (Tutorium)</p>
+            </div>
+            </DialogPanel>
+          </motion.div>
+        </Dialog>
+        <Dialog open={NavTagungen} onClose={() => setNavTagungen(false)} className="relative z-[71]">
+      <DialogBackdrop className="fixed inset-0 bg-[#0E6902]/50" />
+        <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
+        initial={{scale: 0}}
+        animate={{scale: 1}}
+        transition={{duration: 0.5, ease: "easeInOut"}}>
+          <DialogPanel className="bg-[#0E6902] space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
+            <button onClick={() => setNavTagungen(false)}>
+            <motion.div className='w-10 aspect-square p-8'
+            whileHover={{scale: 1.2}}>
+              <XMarkIcon className='text-lime-100 size-10'></XMarkIcon>
+            </motion.div>
+            </button>
+            <DialogTitle className="font-sans fFace text-6xl p-12 text-lime-100 firstletter text-center">Tagungen</DialogTitle>
+            <Description className="p-12 fFace text-3xl lowercase">konferenzen - workshops - buchklub</Description>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">European Centers and Peripheries in the Political Novel (CAPONEU Tagung) am ZfL
+Berlin im Juni 2024 (zus. mit Kyung-Ho Cha, Patrick Eiden-Offe, Ivana Perica und
+Christoph Schaub)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Buchklub: Romane fürs neue Jahrhundert im Literaturhaus Berlin seit Oktober 2023 (zus.
+                    mit Patrick Eiden-Offe, Ivana Perica, Kyung-Ho Cha und Christoph Schaub)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">What is the Political Novel: Defining the Genre (CAPONEU Jahrestagung) am ZfL Berlin
+im September 2023 (zus. mit Kyung-Ho Cha, Patrick Eiden-Offe, Ivana Perica und
+Christoph Schaub)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Poetik des Fehlers an der LMU München im Juli 2022 (zus. mit Viktor Fritzenkötter)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Literary Acts of agency an der LMU München im Rahmen des Cambridge-LMU Research
+                Partnership Rule of Law im Juli 2022 (zus. mit Ivana Perica)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Kammerlektüren (Lektüre-Reihe) in den Kammerspielen München in der Spielzeit
+                2021/2022</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Die Maschine in der Dichtung an der LMU München im Februar 2021 (zus. mit Jan Niklas
+                    Howe/Nachwuchsforschungsgruppe Kreativität und Genie)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Weibliche Kollektive an der LMU München im Rahmen des DFG-Netzwerks Dispositiv der
+                Menge im November 2020 (zus. mit Hanna Sohns)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Arbeit am Feminismus in Kooperation mit den Kammerspielen München im März 2020</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl">
+                <p className="text-start pr-8">Schreibweisen des Selbst in der Gegenwartsliteratur an der LMU München im Juli 2019
+                (zus. mit Johannes Kleinbeck)</p>
+            </div>
+            <div className="flex m-5 bodytext text-xl pb-20">
+                <p className="text-start pr-8">Geschichte schreiben an der LMU München im Juli 2016</p>
+            </div>
+          </DialogPanel>
+        </motion.div>
+      </Dialog>
+      <Dialog open={NavContact} onClose={() => setNavContact(false)} className="relative z-[100]">
+        <DialogBackdrop className="fixed inset-0 bg-[#Eb00df]/30" />
+          <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
+          initial={{scale: 0}}
+          animate={{scale: 1}}
+          transition={{duration: 0.5, ease: "easeInOut"}}>
+            <DialogPanel className="bg-gradient-to-b from-[#00869e] to-[#Eb00df] space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
+              <button onClick={() => setNavContact(false)}>
+              <div className='w-10 aspect-square p-8'>
+                <XMarkIcon className='text-white size-10'></XMarkIcon>
+              </div>
+              </button>
+              <DialogTitle className="font-sans fFace text-6xl p-12 firstletter text-center">Kontakt</DialogTitle>
+              <Description className="p-8 fFace text-3xl">email</Description>
+              <p className='p-4'>johanna-charlotte.horst@germanistik.uni-halle.de</p>
+              <Description className="p-8 fFace text-3xl">uni</Description>
+              <a href="https://www.germanistik.uni-halle.de/komparatistik/ma-komparatistik/johanna-
+charlotte_horst/"><p className='p-4'>hier</p></a>
+              <Description className="p-8 fFace text-3xl">arbeit am feminismus</Description>
+              <a href="https://arbeit-am-feminismus.de/kontakt"><p className='p-4'>hier</p></a>
+            </DialogPanel>
+          </motion.div>
+        </Dialog>
         <MobileNav open={openNav}>
           {navList}
         </MobileNav>
