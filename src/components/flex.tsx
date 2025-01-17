@@ -22,6 +22,7 @@ import Speichergraph from './speichergraph';
 import Vortraege from './vortraege';
 import Publikationen from './publikationen';
 import Forschung from './forschung';
+import Projekte from './projekte';
 let greenSquareClass = "bg-[#3B4D04] h-96 gap-8 m-4 aspect-square";
 let orangeSquareClass = "bg-[#FA0D0D] h-full w-full gap-8 m-4 aspect-square";
 
@@ -198,37 +199,7 @@ export default function Flex(){
         </motion.div>
       </Dialog>
       <Gitterbild />
-      <motion.div onClick={openProjekte} className='h-96 gap-8 m-4 aspect-square bg-[#00869e] flex justify-between fFace shadow-2xl overflow-hidden'
-      whileHover={{scale:0.9}}> 
-      <motion.div 
-      whileHover={{
-        opacity:0,
-        ease: "linear",
-        delay: 10
-      }}
-      className="bg-gradient-to-b from-[#FA0D0D] to-[#940808] w-2/3 h-1/5 mt-48 rounded-r-full flex relative"></motion.div>
-      <span className="font-sans text-white text-5xl tracking-tighter mt-36 fFace absolute">projekte</span>
-      <div className="bg-gradient-to-b from-[#FA0D0D] to-[#940808] w-1/3 h-1/5 mt-10 rounded-l-full relative"></div>
-      </motion.div>
-      <Dialog open={projekte} onClose={() => setProjekte(false)} className="relative z-[100]">
-      <DialogBackdrop className="fixed inset-0 bg-[#00869e]/30" />
-        <motion.div className="fixed inset-0 flex w-screen items-center justify-center"
-        initial={{scale: 0}}
-        animate={{scale: 1}}
-        transition={{duration: 0.5, ease: "easeInOut"}}>
-          <DialogPanel className="bg-gradient-to-b from-[#00869e] to-[#618BA7] space-y-4 h-screen text-white flex-row justify-end w-screen xl:w-1/2 md:w-2/3 overflow-scroll">
-            <button onClick={() => setProjekte(false)}>
-            <div className='w-10 aspect-square p-8'>
-              <XMarkIcon className='text-white size-10'></XMarkIcon>
-            </div>
-            </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12">Projekte</DialogTitle>
-            <Description className="p-12">{lorem.generateSentences(1)}</Description>
-            <p className='p-8'>{lorem.generateParagraphs(30)}</p>
-
-          </DialogPanel>
-        </motion.div>
-      </Dialog>
+      <Projekte />
       <Speichergraph />
     </div>
     

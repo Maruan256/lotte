@@ -111,7 +111,7 @@ export default function Tagungen(){
               <XMarkIcon className='text-lime-100 size-10'></XMarkIcon>
             </motion.div>
             </button>
-            <DialogTitle className="font-sans fFace text-6xl p-12 text-lime-100">Tagungen</DialogTitle>
+            <DialogTitle className="font-sans fFace text-6xl p-12 text-lime-100 firstletter text-center">Tagungen</DialogTitle>
             <Description className="p-12">{lorem.generateSentences(1)}</Description>
             <p className='p-8'>{posts.content ? stripHTMLTags(posts.content.rendered) : 'target not found anywhere where I looked'}</p>
           </DialogPanel>
