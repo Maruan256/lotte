@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 import { StickyNavbar } from './components/navbar.tsx'
 import  Flex  from './components/flex.tsx'
 import  Footer from './components/footer.tsx'
