@@ -15,7 +15,8 @@ import Portrait from './portrait';
 import Gitterbild from './gitterbild';
 import Ruevilin from './ruevilin';
 import About from './about';
-import kaese from "../assets/JPG37farocki_GF.max-2712x1282.format-jpeg.jpegquality-80.jpg";
+import kaese from '../assets/kaesegif.gif'
+import Moon from '../assets/moon.png'
 import noise from "../assets/noise.png"
 import { url } from 'inspector';
 import Speichergraph from './speichergraph';
@@ -25,6 +26,12 @@ import Forschung from './forschung';
 import Projekte from './projekte';
 import Aktuelles from './aktuelles';
 import Contact from './contact';
+import Hintergrund from './hintergrund';
+import All from '../assets/smokefullheight.jpg'
+import womangif from '../assets/womangif.gif'
+import coiffeurgif from '../assets/coiffeurgif.gif'
+import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
+import { start } from 'repl';
 let greenSquareClass = "bg-[#3B4D04] h-96 gap-8 m-4 aspect-square";
 let orangeSquareClass = "bg-[#FA0D0D] h-full w-full gap-8 m-4 aspect-square";
 
@@ -92,31 +99,48 @@ export default function Flex(){
 
 
   return(
-    <div className='flex flex-cols-1 sm:flex-cols-2 md:flex-cols-3 lg:flex-cols-4 xl:flex-cols-5 flex-wrap justify-center overflow-hidden mt-5'>
-      <About />
-      <Portrait />
-      <Journalismus />
-      
-      <Forschung />
-      <a href="https://www.matthes-seitz-berlin.de/buch/beruehren-lesen.html">
-      <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl'
-      whileHover={{scale:0.9}}> 
-        <img className='object-cover h-96' src={kaese} alt="bild" />
-      </motion.div>
-      </a>
-      <Lehre />
-      <Tagungen />
-      <Ruevilin />
-      <Vortraege />
-      <Contact />   
-      <div className='changer h-96 gap-8 m-4 aspect-square shadow-2xl'> 
+    <>
+    <Parallax pages={2} style={{zIndex:-10000, backgroundColor:'#ebe1e4'}}>
+    <ParallaxLayer offset={0} speed={0.1} factor={2} style={{backgroundImage: `url(${All})`, backgroundSize:'100vw 210vh'}} >
+    </ParallaxLayer>
+
+      <ParallaxLayer offset={0} speed={1} factor={4}>
+      <div className='flex flex-cols-1 sm:flex-cols-2 md:flex-cols-3 lg:flex-cols-4 xl:flex-cols-5 flex-wrap justify-center overflow-hidden mt-5'>
+        <About />
+        <Portrait />
+        <Journalismus />
+        
+        <Forschung />
+        <a href="https://www.matthes-seitz-berlin.de/buch/beruehren-lesen.html">
+        <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl'
+        whileHover={{scale:0.9}}> 
+          <img className='object-cover h-96' src={kaese} alt="bild" />
+        </motion.div>
+        </a>
+        <Lehre />
+        <Tagungen />
+        <Ruevilin />
+        <Vortraege />
+        <Contact />   
+        <div className='changer h-96 gap-8 m-4 aspect-square shadow-2xl'> 
+        </div>
+        <Publikationen />
+        <Aktuelles />
+        <Gitterbild />
+        <Projekte />
+        <Speichergraph />
+        <motion.div className='h-96 gap-8 m-4 aspect-square shadow-2xl bg-black justify-center items-center flex'
+        whileHover={{scale:0.9}}> 
+          <img src={womangif} alt="bild" />
+        </motion.div>
+        <motion.div className='h-96 gap-8 m-4 aspect-square shadow-2xl bg-black justify-stretch items-stretch flex'
+        whileHover={{scale:0.9}}> 
+          <img src={coiffeurgif} alt="bild" />
+        </motion.div>
       </div>
-      <Publikationen />
-      <Aktuelles />
-      <Gitterbild />
-      <Projekte />
-      <Speichergraph />
-    </div>
-    
+      </ParallaxLayer>
+      </Parallax>
+
+  </>
   )
 }

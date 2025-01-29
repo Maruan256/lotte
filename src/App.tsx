@@ -5,6 +5,7 @@ import  Footer from './components/footer.tsx'
 import './App.css'
 import './index.css'
 import './assets/MajorMonoDisplay-Regular.ttf'
+import Hintergrund from './components/hintergrund.tsx'
 function App(){
   return (
   

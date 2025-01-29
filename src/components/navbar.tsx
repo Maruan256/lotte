@@ -210,7 +210,7 @@ export function StickyNavbar() {
       <Navbar 
       blurred="false"
       color="black"
-      className="sticky top-0 z-[60] h-max max-w-full rounded-none px-8 py-6 lg:px-8 lg:py-6 bg-white opacity-1 inset-0">
+      className="sticky top-0 z-[60] h-max max-w-full rounded-none px-8 py-6 lg:px-8 lg:py-6 bg-[white] opacity-1 inset-0">
         <div className="flex items-center justify-between text-blue-gray-900">
           <IconButton
             as="a"
