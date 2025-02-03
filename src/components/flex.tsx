@@ -100,12 +100,7 @@ export default function Flex(){
 
   return(
     <>
-    <Parallax pages={2} style={{zIndex:-10000, backgroundColor:'#ebe1e4'}}>
-    <ParallaxLayer offset={0} speed={0.1} factor={2} style={{backgroundImage: `url(${All})`, backgroundSize:'100vw 210vh'}} >
-    </ParallaxLayer>
-
-      <ParallaxLayer offset={0} speed={1} factor={4}>
-      <div className='flex flex-cols-1 sm:flex-cols-2 md:flex-cols-3 lg:flex-cols-4 xl:flex-cols-5 flex-wrap justify-center overflow-hidden mt-5'>
+<div className='flex flex-cols-1 sm:flex-cols-2 md:flex-cols-3 lg:flex-cols-4 xl:flex-cols-5 flex-wrap justify-center overflow-hidden mt-5'>
         <About />
         <Portrait />
         <Journalismus />
@@ -138,8 +133,8 @@ export default function Flex(){
           <img src={coiffeurgif} alt="bild" />
         </motion.div>
       </div>
-      </ParallaxLayer>
-      </Parallax>
+
+
 
   </>
   )

@@ -206,12 +206,12 @@ export function StickyNavbar() {
   );
  
   return (
-    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
+    <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll bg-transparent">
       <Navbar 
       blurred="false"
       color="black"
-      className="sticky top-0 z-[60] h-max max-w-full rounded-none px-8 py-6 lg:px-8 lg:py-6 bg-[white] opacity-1 inset-0">
-        <div className="flex items-center justify-between text-blue-gray-900">
+      className="sticky top-0 z-[60] h-max max-w-full rounded-none px-8 py-6 lg:px-8 lg:py-6 bg-transparent opacity-1 inset-0">
+        <div className="flex items-center justify-between text-blue-gray-900 bg-transparent">
           <IconButton
             as="a"
             href="#"
