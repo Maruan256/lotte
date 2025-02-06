@@ -5,12 +5,18 @@ import { motion } from 'motion/react';
 import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle,Description } from '@headlessui/react';
-import noise from "../assets/noise.png"
+import noise from "../assets/noise.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Aktuelles() {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     const FuzzyOverlay = () => {
         return (
           <motion.div
+          aos-data="fade-up"
             initial={{ transform: "translateX(-10%) translateY(-10%)" }}
             animate={{
               transform: "translateX(10%) translateY(10%)",
@@ -36,7 +42,9 @@ export default function Aktuelles() {
     };
     return(
         <>
-        <motion.div onClick={openAktuelles} className='bg-[repeating-linear-gradient(to_bottom,#afafaf_0px,#afafaf_20px,#e5e6eb_20px,#e5e6eb_40px)] items-center flex-row overflow-hidden h-96 gap-8 m-4 aspect-square relative shadow-2xl'
+        <motion.div 
+        aos-data="fade-up"
+        onClick={openAktuelles} className='bg-[repeating-linear-gradient(to_bottom,#afafaf_0px,#afafaf_20px,#e5e6eb_20px,#e5e6eb_40px)] items-center flex-row overflow-hidden h-96 gap-8 m-4 aspect-square relative shadow-2xl'
       whileHover={{scale:0.9}}> 
       <div className='absolute inset-0 overflow-hidden'>
       <motion.span 

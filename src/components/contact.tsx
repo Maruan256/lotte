@@ -7,15 +7,16 @@ import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle,Description } from '@headlessui/react';
 import { stringify } from 'querystring';
-
 export default function Contact(){
     const[contact, setContact] = useState(false);
+
     function openContact(){
         setContact(true)
     };
     return(
         <>
-        <motion.div onClick={openContact} className='flex bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-purple-600 via-pink-600 to-blue-600 justify-center items-center" h-96 gap-8 m-4 aspect-square shadow-2xl'
+        <motion.div 
+        onClick={openContact} className='flex bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] from-purple-600 via-pink-600 to-blue-600 justify-center items-center" h-96 gap-8 m-4 aspect-square shadow-2xl'
         whileHover={{scale:0.9}}> 
         <span className="text-white text-5xl tracking-tighter fFace pt-36">kontakt</span>
         </motion.div>

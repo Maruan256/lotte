@@ -13,7 +13,7 @@ export default function Karte(){
         <>
         <div 
         data-aos="fade-up"
-        data-aos-delay="100"
+        data-aos-delay="300"
         className='bg-[#0E6902] h-96 gap-8 m-4 aspect-square shadow-2xl overflow-hidden fFace text-5xl '>
 
         </div>

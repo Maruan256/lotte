@@ -32,6 +32,9 @@ import womangif from '../assets/womangif.gif'
 import coiffeurgif from '../assets/coiffeurgif.gif'
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 import { start } from 'repl';
+import Karte from './karte';
+import Kartezwei from './kartezwei';
+import FadeInFromBottom from './cardAnimation';
 let greenSquareClass = "bg-[#3B4D04] h-96 gap-8 m-4 aspect-square";
 let orangeSquareClass = "bg-[#FA0D0D] h-full w-full gap-8 m-4 aspect-square";
 
@@ -101,37 +104,78 @@ export default function Flex(){
   return(
     <>
 <div className='flex flex-cols-1 sm:flex-cols-2 md:flex-cols-3 lg:flex-cols-4 xl:flex-cols-5 flex-wrap justify-center overflow-hidden mt-5'>
+        <FadeInFromBottom>
         <About />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Portrait />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Journalismus />
-        
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Forschung />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
+
         <a href="https://www.matthes-seitz-berlin.de/buch/beruehren-lesen.html">
         <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl'
         whileHover={{scale:0.9}}> 
           <img className='object-cover h-96' src={kaese} alt="bild" />
         </motion.div>
+        
         </a>
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Lehre />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Tagungen />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Ruevilin />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Vortraege />
-        <Contact />   
+        </FadeInFromBottom>
+        <FadeInFromBottom>
+        <Contact />
+        </FadeInFromBottom>
+        <FadeInFromBottom>   
         <div className='changer h-96 gap-8 m-4 aspect-square shadow-2xl'> 
         </div>
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Publikationen />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Aktuelles />
+        </FadeInFromBottom>
+      
+        <FadeInFromBottom>
         <Gitterbild />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Projekte />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <Speichergraph />
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <motion.div className='h-96 gap-8 m-4 aspect-square shadow-2xl bg-black justify-center items-center flex'
         whileHover={{scale:0.9}}> 
           <img src={womangif} alt="bild" />
         </motion.div>
+        </FadeInFromBottom>
+        <FadeInFromBottom>
         <motion.div className='h-96 gap-8 m-4 aspect-square shadow-2xl bg-black justify-stretch items-stretch flex'
         whileHover={{scale:0.9}}> 
           <img src={coiffeurgif} alt="bild" />
         </motion.div>
+        </FadeInFromBottom>
+      
+        <Karte />
+        <Kartezwei />
       </div>
 
 

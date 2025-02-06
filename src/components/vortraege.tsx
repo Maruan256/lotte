@@ -1,19 +1,30 @@
 //@ts-nocheck
-import { useState, useEffect } from 'react'
+import React from 'react';
+import { useState, useEffect } from 'react';
 import './vortraege.css'
-import { motion } from 'motion/react';
+import { motion, useAnimation, useScroll, useMotionValueEvent } from 'motion/react';
 import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle,Description } from '@headlessui/react';
+import { Transition } from 'react-spring';
+import { useInView } from "react-intersection-observer";
+import { use } from 'motion/react-client';
 
 export default function Vortraege(){
+    const [ref, inView] = useInView();
+    const control = useAnimation();
     const[vortraege, setVortraege] = useState(false);
+    
+    
+
     function openVortraege(){
         setVortraege(true)
     };
     return(
         <>
-        <motion.div onClick={openVortraege} className='overflow-hidden h-96 gap-8 m-4 aspect-square bg-[#Eb00df] shadow-2xl'
+        <motion.div 
+        ref={ref}
+        onClick={openVortraege} className='overflow-hidden h-96 gap-8 m-4 aspect-square bg-[#Eb00df] shadow-2xl'
       whileHover={{scale:0.9}}> 
       <div className="flex flex-wrap items-end justify-between h-2/4 break-all p-5">     
           <div className="font-sans text-black text-5xl tracking-[0.02em] flex basis-2/5 leading-[35px] break-all fFace" >vortraege</div>

@@ -1,12 +1,21 @@
-import { useState } from "react"
+//@ts-nocheck
+
+import { useEffect, useState } from "react"
 import { motion } from "motion/react";
 
 import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, Description } from '@headlessui/react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { a } from "react-spring";
+import { use } from "motion/react-client";
 
 
 const about = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     const[about, setAbout] = useState(false);
     function openAbout(){
         setAbout(true)
@@ -15,6 +24,7 @@ const about = () => {
   return (
 <>
 <motion.div 
+aos-data="fade-up"
             whileHover={{scale:0.95}}
             onClick={openAbout} className='flex-col h-96 m-4 gap-8 aspect-square lg:aspect-[2.1/1] bg-gradient-to-b from-[#B6E397] to-[#618BA7] items-end justify-end shadow-2xl'> 
             <div className="h-80 p-10 text-start">
