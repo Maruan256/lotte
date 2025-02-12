@@ -34,6 +34,12 @@ import { start } from 'repl';
 import Karte from './karte';
 import Kartezwei from './kartezwei';
 import FadeInFromBottom from './cardAnimation';
+import Badeanzug from './badeanzug';
+import Infraordinary from './infraordinary';
+import Gemalde from './gemalde';
+import GeschichteSchreiben from './geschichteSchreiben';
+import Lotz from './lotz';
+import Edouard from './edouard';
 let greenSquareClass = "bg-[#3B4D04] h-96 gap-8 m-4 aspect-square";
 let orangeSquareClass = "bg-[#FA0D0D] h-full w-full gap-8 m-4 aspect-square";
 
@@ -162,9 +168,26 @@ export default function Flex(){
           <img src={coiffeurgif} alt="bild" />
         </motion.div>
         </Karte>
-      
-        <Karte />
-        <Kartezwei />
+        <Karte>
+          <Badeanzug />
+        </Karte>
+        <Karte>
+          <Infraordinary />
+        </Karte>
+        <Karte>
+          <Gemalde />
+        </Karte>
+        <Karte>
+          <GeschichteSchreiben />
+        </Karte>
+        <Karte>
+          <Edouard />
+        </Karte>
+        <Karte>
+          <Lotz />
+        </Karte>
+        
+
       </div>
 
 
