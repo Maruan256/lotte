@@ -2,9 +2,11 @@
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
-
-export default function Karte(){
+import React, { Children, useEffect } from 'react';
+interface KarteProps {
+    children: React.ReactNode;
+}
+const Karte: React.FC<KarteProps> = ({children}) => {
     useEffect(() => {
         AOS.init();
 
@@ -14,9 +16,10 @@ export default function Karte(){
         <div 
         data-aos="fade-up"
         data-aos-delay="100"
-        className='bg-[#0E6902] h-96 gap-8 m-4 aspect-square shadow-2xl overflow-hidden fFace text-5xl '>
-
+        className=' '>
+            <div>{children}</div>
         </div>
         </>
     )
 }
+export default Karte;

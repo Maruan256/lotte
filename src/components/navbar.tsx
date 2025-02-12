@@ -14,20 +14,9 @@ import { motion } from "motion/react";
 
 import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { LoremIpsum } from 'lorem-ipsum';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, Description } from '@headlessui/react';
 export function StickyNavbar() {
-  const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-      max:8,
-      min: 4
-    },
-    wordsPerSentence:
-    {
-      max:16,
-      min:4
-    }
-  })
+
   const [openNav, setOpenNav] = React.useState(false);
  
   React.useEffect(() => {

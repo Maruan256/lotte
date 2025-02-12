@@ -6,7 +6,6 @@ import { motion } from 'motion/react'
 import { div, style } from 'motion/react-client';
 import "preline/preline";
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { LoremIpsum } from 'lorem-ipsum';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle, Button, Checkbox, Description } from '@headlessui/react';
 import Lehre from './lehre';
 import Journalismus from './journalismus';
@@ -45,17 +44,7 @@ function CollapsedFlexContainer() {
 
 
 export default function Flex(){
-  const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-      max:8,
-      min: 4
-    },
-    wordsPerSentence:
-    {
-      max:16,
-      min:4
-    }
-  })
+
 
 
 
@@ -104,19 +93,19 @@ export default function Flex(){
   return(
     <>
 <div className='flex flex-cols-1 sm:flex-cols-2 md:flex-cols-3 lg:flex-cols-4 xl:flex-cols-5 flex-wrap justify-center overflow-hidden mt-5'>
-        <FadeInFromBottom>
+        <Karte>
         <About />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Portrait />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Journalismus />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Forschung />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
 
         <a href="https://www.matthes-seitz-berlin.de/buch/beruehren-lesen.html">
         <motion.div className='bg-transparent h-96 gap-8 m-4 aspect-square shadow-2xl'
@@ -125,54 +114,54 @@ export default function Flex(){
         </motion.div>
         
         </a>
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Lehre />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Tagungen />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Ruevilin />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Vortraege />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Contact />
-        </FadeInFromBottom>
-        <FadeInFromBottom>   
+        </Karte>
+        <Karte>   
         <div className='changer h-96 gap-8 m-4 aspect-square shadow-2xl'> 
         </div>
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Publikationen />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Aktuelles />
-        </FadeInFromBottom>
+        </Karte>
       
-        <FadeInFromBottom>
+        <Karte>
         <Gitterbild />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Projekte />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <Speichergraph />
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <motion.div className='h-96 gap-8 m-4 aspect-square shadow-2xl bg-black justify-center items-center flex'
         whileHover={{scale:0.9}}> 
           <img src={womangif} alt="bild" />
         </motion.div>
-        </FadeInFromBottom>
-        <FadeInFromBottom>
+        </Karte>
+        <Karte>
         <motion.div className='h-96 gap-8 m-4 aspect-square shadow-2xl bg-black justify-stretch items-stretch flex'
         whileHover={{scale:0.9}}> 
           <img src={coiffeurgif} alt="bild" />
         </motion.div>
-        </FadeInFromBottom>
+        </Karte>
       
         <Karte />
         <Kartezwei />
